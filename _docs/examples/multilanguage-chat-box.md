@@ -83,22 +83,31 @@ Have a look at [All customizable texts](#all-customizable-texts) at the end of t
 
 If you have multilanguage website you can modify more languages in the same `.js` file. Expand code below using `conditions` and check your site URL for language code. Based on language you can choose translations you need. In this example you would look for `/en/` or `/de/` in your URL.
 
-* `http://example.com/en/`
 * `http://example.com/de/`
+* `http://example.com/pl/`
+* `http://example.com/en/`
 
 ```js
 <script>
-  smartsupp('translate', {
-    widget: {
-      online: 'We are here.'
-    }
-  }, 'en'); // set EN langauge
-
-  smartsupp('translate', {
-    widget: {
-      online: 'Wir sind hier.'
-    }
-  }, 'de'); // set DE language
+  if(window.location.href === "http://example.com/de/") {
+    smartsupp('translate', {
+      widget: {
+        online: 'Wir sind hier.'
+      }
+    }, 'de'); // set DE language
+  } else if(window.location.href === "http://example.com/pl/") {
+    smartsupp('translate', {
+      widget: {
+        online: 'Wir sind hier.'
+      }
+    }, 'pl'); // set PL language
+  } else {
+    smartsupp('translate', {
+      widget: {
+        online: 'We are here.'
+      }
+    }, 'en'); // set EN langauge
+  }
 </script>
 ```
 
