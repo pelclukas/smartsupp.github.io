@@ -4,6 +4,14 @@ subtitle: "Make conversations easier for your support staff."
 description: "When chat is online visitor can write a message. Pre-chat form will show right after visitor sends first message."
 ---
 
+## Hide pre-chat form
+
+If you are using pre-chat form, you can hide it on certain pages by setting the variable `requireLogin` in your code.
+
+```js
+_smartsupp.requireLogin = false;
+```
+
 ## Default inputs
 
 If you are using pre-chat form, you can customize the form fields. Default inputs are `name`, `email`. If you want to disable any of them, set property `loginNameControl` or `loginEmailControl` to `false`.
